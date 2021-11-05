@@ -6,11 +6,11 @@ using namespace std;
 #define SWAP(a,b)           {if(a != b){b = a - b; a -= b; b += a;}}
 
 
-//単純ソート
+//単純ソート（昇順）計算量O(n^2) 安定でない（同等のデータのソート前の順序が保たれない）
 void simple_sort(int *array,size_t size) {
-  for( size_t i = 0; i < size - 1; ++i ){
-    for( size_t j = i + 1; j < size; ++j ){
-      if( array[i] > array[j] ){ //昇順に整列
+  for( size_t i = 0; i < size - 1; i++ ){
+    for( size_t j = i+1; j < size; j++ ){
+      if( array[i] > array[j] ){
         SWAP(array[i], array[j]);
       }
     }
