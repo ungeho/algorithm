@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cassert>
 
 using namespace std;
 
@@ -29,6 +30,7 @@ int main(void) {
   int array[] = {5,1,4,2,7,10,6,8,9,3};
   cout_array(array,ARRAY_LENGTH(array));
   simple_sort(array,ARRAY_LENGTH(array));
+  for(int i = 1; i <= 10; i++) assert(array[i-1] == i);
   cout_array(array,ARRAY_LENGTH(array));
 
   return 0;
