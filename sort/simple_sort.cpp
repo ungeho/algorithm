@@ -3,7 +3,7 @@
 using namespace std;
 
 #define ARRAY_LENGTH(array) (sizeof(array) / sizeof(array[0]))
-#define SWAP(a,b)           {b ^= a; a ^= b; b ^= a;}
+#define SWAP(a,b)           {if(a != b){b = a - b; a -= b; b += a;}}
 
 
 //単純ソート
