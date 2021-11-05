@@ -3,12 +3,8 @@
 using namespace std;
 
 #define ARRAY_LENGTH(array) (sizeof(array) / sizeof(array[0]))
+#define SWAP(a,b)           {b ^= a; a ^= b; b ^= a;}
 
-int swap(int *a,int *b) {
-  int tmp= *a;
-  *a = *b;
-  *b = tmp;
-}
 
 //選択ソート(昇順)
 void selection_sort(int *array,size_t size) {
@@ -20,7 +16,7 @@ void selection_sort(int *array,size_t size) {
         min_idx = j;
       }
     }
-    swap(array[i], array[min_idx]);
+    SWAP(array[i], array[min_idx]);
   }
 }
 

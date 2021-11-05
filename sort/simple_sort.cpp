@@ -3,7 +3,7 @@
 using namespace std;
 
 #define ARRAY_LENGTH(array) (sizeof(array) / sizeof(array[0]))
-
+#define SWAP(a,b)           {b ^= a; a ^= b; b ^= a;}
 
 
 //単純ソート
@@ -11,7 +11,7 @@ void simple_sort(int *array,size_t size) {
   for( size_t i = 0; i < size - 1; ++i ){
     for( size_t j = i + 1; j < size; ++j ){
       if( array[i] > array[j] ){ //昇順に整列
-        swap(array[i], array[j]);
+        SWAP(array[i], array[j]);
       }
     }
   }
