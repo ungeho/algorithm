@@ -8,9 +8,9 @@ using namespace std;
 //テンプレート   広範囲の型に適用できるようにする
 template<typename T>
 inline void swap(T *a,T *b) {
-  *b = *a - *b;
-  *a = *a - *b; //a-(a-b)=b
-  *b = *b + *a; //(a-b)+b=a
+  *a = *a + *b;
+  *b = *a - *b; //(a+b)-b=a
+  *a = *a - *b; //(a+b)-a=b
 }
 
 template<typename T>

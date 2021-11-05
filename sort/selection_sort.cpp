@@ -5,9 +5,9 @@ using namespace std;
 #define ARRAY_LENGTH(array) (sizeof(array) / sizeof(array[0]))
 
 int swap(int *a,int *b) {
-  int *tmp= a;
-  a = b;
-  b = tmp;
+  int tmp= *a;
+  *a = *b;
+  *b = tmp;
 }
 
 //選択ソート(昇順)

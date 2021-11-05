@@ -4,11 +4,6 @@ using namespace std;
 
 #define ARRAY_LENGTH(array) (sizeof(array) / sizeof(array[0]))
 
-int swap(int *a,int *b) {
-  int *tmp = a;
-  a = b;
-  b = tmp;
-}
 
 
 //単純ソート
