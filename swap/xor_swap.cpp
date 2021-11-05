@@ -5,7 +5,7 @@ using namespace std;
 
 
 //ビット演算子は浮動小数点型に対応してない為、double型のswapに使おうとするとコンパイラに怒られる。
-//また、A == B だった場合、AもBも0になる。
+//また、A == B だった場合、AもBも0になるので分岐が必要。
 inline void swap(int *a,int *b) {
   if(*a != *b) {
     *b ^= *a; //B XOR A
