@@ -7,7 +7,7 @@ using namespace std;
 //inline関数    呼び出し側にコードが展開されるので関数呼び出しに伴うオーバーヘッド削減、特に内容が小さく頻繁に呼ばれる場合に有用
 //テンプレート   広範囲の型に適用できるようにする
 template<typename T>
-inline void swap(T *a,T *b) {
+inline void swap(T *a,T *b) {  //a+bがオーバーフローを起こさない場合にのみ利用可能
   *a = *a + *b;
   *b = *a - *b; //(a+b)-b=a
   *a = *a - *b; //(a+b)-a=b
