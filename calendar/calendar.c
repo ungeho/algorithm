@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int LeepYearFlag(int year) {
+int leap(int year) {
   if (year%400 == 0 || (year%4 == 0 && year%100 != 0) ) {
     return 1;
   } else {
@@ -18,7 +18,7 @@ int ZellersCongruence(int year,int month,int day) {
 }
 
 void calendar(int year) {
-  int  month_date[12]    = {31, 28 + LeepYearFlag(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
+  int  month_date[12]    = {31, 28 + leap(year), 31, 30, 31, 30, 31, 31, 30, 31, 30, 31};
   char month_name[12][10] = {"January","February","March","April","May","June","July","August","September","October","November","December"};
 
   for (int month = 1; month <= 12; month++) {
