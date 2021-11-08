@@ -28,7 +28,12 @@ void twoproduct(double a,double b,double *x,double *y) {
   *y = a2 * b2 - (((*x - a1 * b1) - a2 * b1) - a1 *b2);
 }
 
-
+inline void cout_result(double a,double b,double x,double y,char op) {
+  std::cout << std::setprecision(17) << "a     = " << a << "\n";
+  std::cout << std::setprecision(17) << "b     = " << b << "\n";
+  std::cout << std::setprecision(17) << "a "<< op <<" b = " << x << "\n";
+  std::cout << std::setprecision(17) << "err   = " << y << "\n";
+}
 
 int main(void) {
   double a,b,x,y;
@@ -38,20 +43,14 @@ int main(void) {
 
   twosum(a,b,&x,&y);
 
-  // std::cout << std::fixed;
-  std::cout << std::setprecision(17) << "a     = " << a << "\n";
-  std::cout << std::setprecision(17) << "b     = " << b << "\n";
-  std::cout << std::setprecision(17) << "a + b = " << x << "\n";
-  std::cout << std::setprecision(17) << "err   = " << y << "\n";
+  cout_result(a,b,x,y,'+');
 
   std::cout << "\n";
 
   twoproduct(a,b,&x,&y);
 
-  std::cout << std::setprecision(17) << "a     = " << a << "\n";
-  std::cout << std::setprecision(17) << "b     = " << b << "\n";
-  std::cout << std::setprecision(17) << "a + b = " << x << "\n";
-  std::cout << std::setprecision(17) << "err   = " << y << "\n";
+  cout_result(a,b,x,y,'*');
+
 
   return 0;
 }
