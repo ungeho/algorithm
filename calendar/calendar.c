@@ -23,14 +23,14 @@ void calendar(int year) {
 
   for (int month = 1; month <= 12; month++) {
     int count = ZellersCongruence(year,month,1);
-    printf("%s\n",month_name[month-1]);
-    printf("  Sun   Mon   Tue   Wed   Thu   Fri   Sat\n");
-    if(ZellersCongruence(year,month,1)) printf("     ");
+    printf("\n%d %s\n",year,month_name[month-1]);
+    printf("Sun   Mon   Tue   Wed   Thu   Fri   Sat\n");
+    if(ZellersCongruence(year,month,1)) printf("   ");
     for (int i = 1; i < ZellersCongruence(year,month,1); i++)  printf("      ");
 
     for (int day = 1; day <= month_date[month-1]; day++) {
       if (count%7 == 0) {
-        printf("%5d",day);
+        printf("%3d",day);
       } else {
         printf("%6d",day);
       }
