@@ -1,4 +1,5 @@
 #include <iostream>
+#include <bits/stdc++.h>
 
 //計算過程も整数
 //nCr = (n-r+1)*...*(n-1)*n / ( 1*2*....*r*(r-1) )
@@ -13,6 +14,10 @@ unsigned long comb(int n,int r) {
   for(int i = 1; i <= r; i++) {
     res *= n - r + i; // r * (n-r+i) (n-r+i = n-r+1,...,n)
     res /= i;
+    //次の項がオーバーフローする場合、素因数分解を行い先に割っておく処理を作るとよさそう..？
+    if(i < r && res >= LONG_MAX/(n-r+i+1)) {
+      std::cout << "i = " << i + 1 << ":" << "overflow\n";
+    }
   }
   return res;
 }
@@ -23,6 +28,7 @@ int main(void) {
   // std::cout << comb(45,10);
 
   std::cout << comb(45,8);
+
 
   return 0;
 }
