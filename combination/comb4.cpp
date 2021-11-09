@@ -15,7 +15,7 @@ unsigned long comb(int n,int r) {
     res *= n - r + i; // r * (n-r+i) (n-r+i = n-r+1,...,n)
     res /= i;
     //次の項がオーバーフローする場合、素因数分解を行い先に割っておく処理を作るとよさそう..？
-    if(i < r && res >= LONG_MAX/(n-r+i+1)) {
+    if(i < r && res >= ULONG_MAX/(n-r+i+1)) {
       std::cout << "i = " << i + 1 << ":" << "overflow\n";
     }
   }
