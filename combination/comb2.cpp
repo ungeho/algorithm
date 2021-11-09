@@ -10,6 +10,7 @@ unsigned long comb(int n,int r) {
   if(n == r || r == 0) return 1;
   //nCr = n!/(n-1)! = n
   if(r == 1)           return n;
+  //正しくない値になる可能性がある(double)
   return comb(n - 1, r - 1) * (double)n / (double)r;
 }
 
