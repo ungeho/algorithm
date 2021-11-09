@@ -12,9 +12,14 @@ unsigned long comb(int n,int r) {
   if (r > n-r) r = n-r;
   unsigned long res = 1;
   for(int i = 1; i <= r; i++) {
+    int flag = 0;
     res *= n - r + i; // r * (n-r+i) (n-r+i = n-r+1,...,n)
-    res /= i;
-    //次の項がオーバーフローする場合、素因数分解を行い先に割っておく処理を作るとよさそう..？
+    if(flag) {
+      flag = 0;
+    } else {
+      res /= i;
+    }
+    //オーバーフローの判定
     if(i < r && res >= ULONG_MAX/(n-r+i+1)) {
       std::cout << "i = " << i + 1 << ":" << "overflow\n";
     }
