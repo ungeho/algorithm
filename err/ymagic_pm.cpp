@@ -17,7 +17,7 @@ int main(void) {
   tmp = x + a;
   std::cout << "x + a - a = " << tmp - a << "\n";
   tmp = x - a;
-  std::cout << "x - a + a = " << (tmp) + a << "\n";
+  std::cout << "x - a + a = " << tmp + a << "\n";
 
 
   return 0;
