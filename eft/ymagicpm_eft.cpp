@@ -19,7 +19,7 @@ int main(void) {
 
   std::cout << "Input a :"; std::cin >> a;
 
-    //xの最上位bit
+  //xの最上位bit
   int n = floor(log2(fabs(a)));
   b = pow( 2.0 , n + 53 ); //丸めの影響を最大にする為、有効桁数分左にずらす
 
