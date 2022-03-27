@@ -1,9 +1,8 @@
 /*
-通常の行列積
+ループ交換法：ループの順番を入れ替える事でメモリのアクセス方向を連続にしている。
+※C言語では行方向に連続しているが、言語によって違う場合があるらしいので注意。
 コンパイル : gcc -O3 matrixprod.c
 */
-
-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -43,8 +42,9 @@ void showMatrix(int mat[N][N]) {
 void prodMatrix(int matRes[N][N],int matLeft[N][N],int matRight[N][N]) {
   initMatrix(matRes);
   for(int i = 0; i < N; i++) {
-    for(int j = 0; j < N; j++) {
-      for(int k = 0; k < N; k++) {
+    for(int k = 0; k < N; k++) {
+      int tmp = 0;
+      for(int j = 0; j < N; j++) {
         matRes[i][j] += matLeft[i][k] * matRight[k][j];
       }
     }
